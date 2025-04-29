@@ -104,7 +104,11 @@ const ItemForm = () => {
                 <div className="w-full">
                   <p>Image</p>
                   <Button
-                    onClick={() => open()}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (open) open();
+                      else toast("upload widget not ready yet...");
+                    }}
                     variant="outline"
                     className="w-full cursor-pointer"
                   >

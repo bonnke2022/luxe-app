@@ -25,9 +25,9 @@ function Providers({ children }: { children: ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <Toaster />
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>{children}</Provider>
+        <Toaster />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </ThemeProvider>

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Jost, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Favicon from "@/public/favicon-16x16.png";
-import Providers from "@/app/providers";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
+import Providers from "./providers";
 
 const jost = Jost({
   variable: "--font-jost",
@@ -38,13 +37,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <UserProvider>
-        <body
-          className={`${jost.variable} ${playfair.variable} ${inter.variable} antialiased`}
-        >
-          <Providers>{children}</Providers>
-        </body>
-      </UserProvider>
+      <body
+        className={`${jost.variable} ${playfair.variable} ${inter.variable} antialiased`}
+      >
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

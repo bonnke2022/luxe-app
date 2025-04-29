@@ -1,12 +1,12 @@
 "use client";
 import { ChevronRight, ShoppingCart } from "lucide-react";
 import Link from "next/link";
-import { useUser } from "@auth0/nextjs-auth0/client";
+// import { useUser } from "@auth0/nextjs-auth0";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/state/store";
 
 const RightNavbar = ({ bgColor }: { bgColor: string }) => {
-  const { user } = useUser();
+  // const { user } = useUser();
   const numItemsInCart = useSelector(
     (state: RootState) => state.cartState.numItemsInCart
   );
@@ -21,7 +21,7 @@ const RightNavbar = ({ bgColor }: { bgColor: string }) => {
           <ShoppingCart className="" />
         </Link>
       </div>
-      {user?.nickname ? (
+      {/* {user?.nickname ? (
         <div className="hidden lg:flex gap-5 items-center">
           <span className="capitalize py-2 px-4 bg-blue-500 text-lg font-semibold rounded-[100%]">
             {user?.nickname.slice(0, 1)}
@@ -34,15 +34,15 @@ const RightNavbar = ({ bgColor }: { bgColor: string }) => {
             Logout <ChevronRight />
           </Link>
         </div>
-      ) : (
-        <Link
-          href="/api/auth/login"
-          className={`hidden lg:flex gap-2 items-center ${bgColor} text-lg`}
-        >
-          <p className="whitespace-nowrap">My Account</p>
-          <ChevronRight />
-        </Link>
-      )}
+      ) : ( */}
+      <Link
+        href="/api/auth/login"
+        className={`hidden lg:flex gap-2 items-center ${bgColor} text-lg`}
+      >
+        <p className="whitespace-nowrap">My Account</p>
+        <ChevronRight />
+      </Link>
+      {/* )} */}
     </div>
   );
 };

@@ -4,22 +4,22 @@ import { links, NavLink } from "@/lib/carouselLinks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronRight, ShoppingCart } from "lucide-react";
-import { useUser } from "@auth0/nextjs-auth0/client";
+// import { useUser } from "@auth0/nextjs-auth0";
 
 const Sidebar = () => {
   const pathname = usePathname();
-  const { user } = useUser();
-  if (user?.length === 0)
-    return (
-      <div className="flex gap-4 items-center w-full bg-[#eee] lg:hidden p-2">
-        <h2 className="text-lg">Items not found...</h2>
-      </div>
-    );
+  // const { user } = useUser();
+  // if (user?.length === 0)
+  //   return (
+  //     <div className="flex gap-4 items-center w-full bg-[#eee] lg:hidden p-2">
+  //       <h2 className="text-lg">Items not found...</h2>
+  //     </div>
+  //   );
   return (
     <>
       <SheetHeader>
         <SheetTitle className="flex flex-col items-center gap-6">
-          {user?.nickname ? (
+          {/* {user?.nickname ? (
             <div className="flex gap-4 items-center w-full bg-[#eee] lg:hidden p-2">
               <span className="capitalize py-3 px-4 bg-blue-500 text-lg font-semibold rounded-[100%]">
                 {user.nickname.slice(0, 1)}
@@ -31,15 +31,15 @@ const Sidebar = () => {
                 Logout <ChevronRight className="w-6" />
               </Link>
             </div>
-          ) : (
-            <Link
-              href="/api/auth/login"
-              className={`flex gap-2 items-center bg-[#eee] p-3 lg:hidden`}
-            >
-              <p className="whitespace-nowrap">My Account</p>
-              <ChevronRight className="w-6" />
-            </Link>
-          )}
+          ) : ( */}
+          <Link
+            href="/api/auth/login"
+            className={`flex gap-2 items-center bg-[#eee] p-3 lg:hidden`}
+          >
+            <p className="whitespace-nowrap">My Account</p>
+            <ChevronRight className="w-6" />
+          </Link>
+          {/* )} */}
           <div className="flex">
             <Link href="/cart" className="relative">
               {" "}

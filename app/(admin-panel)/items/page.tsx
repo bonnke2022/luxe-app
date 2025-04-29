@@ -1,5 +1,4 @@
 import ItemsList from "@/components/ItemsList";
-import SearchForm from "@/components/SearchForm";
 import { GetAllItemsAction } from "@/lib/action";
 import {
   dehydrate,
@@ -17,7 +16,6 @@ async function ItemsPage() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <SearchForm />
       <ItemsList />
     </HydrationBoundary>
   );

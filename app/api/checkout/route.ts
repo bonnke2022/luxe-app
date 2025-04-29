@@ -1,4 +1,4 @@
-import { CartItem } from "@/app/state/features/cart/cartSlice";
+import { CartItem } from "@/pages/state/features/cart/cartSlice";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
