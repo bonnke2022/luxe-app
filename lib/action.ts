@@ -1,7 +1,7 @@
 "use server";
 import { createAndEditItemSchema, CreateAndEditItemType } from "@/utils/types";
 import prisma from "./db";
-import { Item, Prisma } from "@prisma/client";
+import { Item, Prisma } from "@/lib/generated/prisma";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
