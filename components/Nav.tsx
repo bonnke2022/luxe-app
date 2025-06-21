@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import LinksDropdown from "./LinksDropdown";
-import ThemeToggle from "./ThemeToggle";
 
 const Nav = () => {
   return (
@@ -10,7 +9,6 @@ const Nav = () => {
         <LinksDropdown />
       </div>
       <div className="flex items-center gap-x-4">
-        <ThemeToggle />
         <Link
           href="/shop"
           className="border-2 rounded-lg px-4 py-2 hover:bg-blue-200"
