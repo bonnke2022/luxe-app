@@ -3,6 +3,7 @@ import { Jost, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Favicon from "@/public/favicon-16x16.png";
 import Providers from "./providers";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const jost = Jost({
   variable: "--font-jost",
@@ -36,12 +37,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${jost.variable} ${playfair.variable} ${inter.variable} antialiased`}
-      >
-        <Providers>{children}</Providers>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${jost.variable} ${playfair.variable} ${inter.variable} antialiased`}
+        >
+          <Providers>{children}</Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

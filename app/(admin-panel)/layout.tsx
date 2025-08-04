@@ -9,7 +9,7 @@ function layout({ children }: PropsWithChildren) {
         <Side />
       </div>
       <div className="lg:col-span-4">
-        <div className="lg:hidden">
+        <div className="">
           <Nav />
         </div>
         <div className="py-16 px-4 sm:px-8 lg:px-16">{children}</div>

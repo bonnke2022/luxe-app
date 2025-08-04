@@ -1,7 +1,6 @@
 "use client";
 import Women from "@/assets/women-posing.jpg";
 import Image from "next/image";
-import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 const AboutUs = () => {
@@ -14,7 +13,7 @@ const AboutUs = () => {
           alt="Women poses"
           width={50}
           height={50}
-          className="w-full lg:w-170 h-100 md:h-165"
+          className="w-full lg:w-170 h-full"
           priority={false}
           loading="lazy"
           unoptimized
@@ -34,9 +33,9 @@ const AboutUs = () => {
           </p>
           <Link
             href="/about"
-            className="flex items-center text-2xl gap-5 px-9 bg-black text-white cursor-pointer py-2 whitespace-nowrap"
+            className="flex items-center text-2xl gap-5 px-9 bg-black text-white cursor-pointer py-2 whitespace-nowrap rounded-lg"
           >
-            Learn More <ChevronRight className="h-10" />
+            Learn More
           </Link>
         </div>
       </div>

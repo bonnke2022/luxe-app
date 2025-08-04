@@ -1,15 +1,15 @@
-import { CartItem } from "@/pages/state/features/cart/cartSlice";
+// app/api/checkout/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2025-03-31.basil",
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+  apiVersion: "2023-10-16" as const,
 });
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
 
-  const line_items = body.items.map((item: CartItem) => ({
+  const line_items = body.items.map((item: any) => ({
     price_data: {
       currency: "usd",
       product_data: {
@@ -29,12 +29,9 @@ export async function POST(req: NextRequest) {
       success_url: `${req.headers.get("origin")}/success`,
       cancel_url: `${req.headers.get("origin")}/cancel`,
     });
+
     return NextResponse.json({ url: session.url });
-  } catch (error: unknown) {
-    let message = "Something went wrong";
-    if (error instanceof Error) {
-      message = error.message;
-    }
-    return NextResponse.json({ error: message }, { status: 500 });
+  } catch (err) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }

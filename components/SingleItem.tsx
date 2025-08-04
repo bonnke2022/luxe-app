@@ -24,19 +24,19 @@ const SingleItem = ({ id, cart }: { id: number; cart: string }) => {
 
   if (isLoading)
     return (
-      <main className="flex flex-col lg:flex-row items-center lg:items-start justify-center w-full items-center gap-8 max-w-6xl">
+      <main className="flex flex-col lg:flex-row  lg:items-start justify-center w-full items-center gap-8 max-w-6xl">
         <LoadingCircleSpinner />
       </main>
     );
   if (error)
     return (
-      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center w-full items-center gap-8 max-w-6xl">
+      <div className="flex flex-col lg:flex-row  lg:items-start justify-center w-full items-center gap-8 max-w-6xl">
         <p>Error: {error.message || "Something went wrong!!!"}</p>;
       </div>
     );
   if (!data)
     return (
-      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center w-full items-center gap-8 max-w-6xl">
+      <div className="flex flex-col lg:flex-row lg:items-start justify-center w-full items-center gap-8 max-w-6xl">
         <p>No items found...</p>
       </div>
     );
@@ -57,19 +57,19 @@ const SingleItem = ({ id, cart }: { id: number; cart: string }) => {
   };
 
   return (
-    <main className="flex flex-col lg:flex-row items-center lg:items-start justify-center w-full items-center gap-8 max-w-6xl">
+    <main className="flex flex-col lg:flex-row lg:items-start justify-center w-full items-center gap-8 max-w-6xl px-8">
       <Image
         src={data?.image || ""}
         alt={data?.title || ""}
         width={50}
         height={50}
-        className="w-full lg:w-[50%] h-full lg:h-200"
+        className="w-full lg:w-[50%] h-full lg:h-200 rounded-lg lg:rounded-none"
         unoptimized
         priority={false}
         loading="lazy"
       />
       <div className="flex flex-col gap-6 w-full lg:w-[50%]">
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center lg:text-left">
           {data?.title}
         </h1>
         <h1 className="text-xl md:text-3xl lg:text-4xl border-t-2 w-35 py-3">
@@ -117,7 +117,7 @@ const SingleItem = ({ id, cart }: { id: number; cart: string }) => {
 
         {cart === "" ? null : (
           <Button
-            className="w-[80%] md:w-full self-center mt-8 cursor-pointer"
+            className="w-full self-center mt-8 cursor-pointer"
             onClick={AddToCart}
           >
             {cart}

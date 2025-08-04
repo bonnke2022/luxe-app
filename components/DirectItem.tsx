@@ -19,7 +19,7 @@ const DirectItem = () => {
   if (items?.length === 0)
     return (
       <div className="flex items-center justify-between w-full lg:w-[80%]">
-        <h2 className="text-lg">Items not found...</h2>;
+        <h2 className="text-lg">Items not found...</h2>
       </div>
     );
 
@@ -32,18 +32,18 @@ const DirectItem = () => {
   return (
     <div className="flex items-center justify-between w-full lg:w-[80%]">
       <Link href={`/shop/${items[currentIndex].id}`}>
-        <Button onClick={prevSlide} variant="ghost" className="cursor-pointer">
-          <ArrowLeft className="w-10 h-10" />
-        </Button>
+        <button onClick={prevSlide} className="cursor-pointer">
+          <ArrowLeft className="w-6 h-6" />
+        </button>
       </Link>
       <Link href="/shop">
         <LayoutGrid className="w-10 h-10" />
       </Link>
 
       <Link href={`/shop/${items[currentIndex].id}`}>
-        <Button onClick={nextSlide} variant="ghost" className="cursor-pointer">
-          <ArrowRight className="w-10 h-10" />
-        </Button>
+        <button onClick={nextSlide} className="cursor-pointer">
+          <ArrowRight className="w-6 h-6" />
+        </button>
       </Link>
     </div>
   );

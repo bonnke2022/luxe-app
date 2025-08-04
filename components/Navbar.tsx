@@ -51,7 +51,7 @@ const Navbar = () => {
           className={`bg-white flex shadow-md py-2 ${
             isScrolled
               ? "justify-between lg:justify-around w-full fixed transition-all duration-300 top-0 left-0"
-              : "justify-between w-full lg:w-[75%]"
+              : "justify-between w-full lg:w-[80%]"
           }  px-8`}
         >
           <div className="flex items-center gap-15 justify-between">
@@ -109,7 +109,7 @@ const Navbar = () => {
           className={
             isScrolled
               ? "hidden"
-              : "hidden lg:flex items-center gap-10 bg-[#eee] py-7 px-4 lg:w-[25%] text-xl"
+              : "hidden lg:flex items-center justify-center gap-10 bg-[#eee] py-7 px-4 lg:w-[20%] text-xl"
           }
         >
           <RightNavbar bgColor="" />

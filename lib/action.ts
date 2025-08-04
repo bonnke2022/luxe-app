@@ -1,9 +1,15 @@
 "use server";
-import { createAndEditItemSchema, CreateAndEditItemType } from "@/utils/types";
+import {
+  createAndEditItemSchema,
+  CreateAndEditItemType,
+  formSchema,
+  testUser,
+} from "@/utils/types";
 import prisma from "./db";
 import { Item, Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { createSession } from "./session";
 
 export type PublicItem = {
   id: number;
@@ -151,3 +157,26 @@ export async function deleteBoardAction(
     return null;
   }
 }
+
+// export async function login(prevState, formData: FormData) {
+//   const result = formSchema.safeParse(Object.fromEntries(formData));
+//   if (!result.success) {
+//     return {
+//       errors: result.error.flatten().fieldErrors,
+//     };
+//   }
+
+//   const { email, password } = result.data;
+//   if (email !== testUser.email || password !== testUser.password) {
+//     return {
+//       errors: {
+//         email: ["Invalid email or password"],
+//       },
+//     };
+//   }
+
+//   await createSession(testUser.id);
+//   redirect("/");
+// }
+
+// export async function logout() {}

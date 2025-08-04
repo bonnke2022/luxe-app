@@ -25,7 +25,7 @@ const LandingPage = () => {
     );
   };
   return (
-    <div className="relative min-h-screen">
+    <section id="home" className="relative min-h-screen">
       <Image
         src={slides[currentIndex].image}
         alt={slides[currentIndex].title}
@@ -66,7 +66,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default LandingPage;

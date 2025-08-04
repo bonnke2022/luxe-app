@@ -117,7 +117,7 @@ const Footer = () => {
           <p className="whitespace-nowrap">Terms and Conditions</p>
           <p className="whitespace-nowrap">Privacy Policy</p>
           <p>Cookies</p>
-          <Link href="/" className="hidden lg:block">
+          <Link href="#home" className="hidden lg:block">
             <ChevronUp className="w-10 h-10" />
           </Link>
         </div>

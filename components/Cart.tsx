@@ -1,19 +1,15 @@
-// app/cart/page.tsx
 "use client";
-
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/state/store";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-// import { useUser } from "@auth0/nextjs-auth0";
 import { useState } from "react";
 import { toast } from "sonner";
 import LoadingCircleSpinner from "./Loading";
 
 const CartPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  // const { user } = useUser();
   const cartItems = useSelector(
     (state: RootState) => state.cartState.cartItems
   );
@@ -41,19 +37,6 @@ const CartPage = () => {
     }
     setIsLoading(false);
   };
-
-  // if (!user) {
-  //   return (
-  //     <main className="p-6 max-w-5xl mx-auto space-y-6">
-  //       <h2 className="text-xl font-bold">
-  //         Please log in to proceed with checkout.
-  //       </h2>
-  //       <Link href="/api/auth/login">
-  //         <Button className="cursor-pointer">Login</Button>
-  //       </Link>
-  //     </main>
-  //   );
-  // }
 
   return (
     <main className="p-6 max-w-5xl mx-auto">

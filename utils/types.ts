@@ -112,3 +112,25 @@ export const createAndEditItemSchema = z.object({
 });
 
 export type CreateAndEditItemType = z.infer<typeof createAndEditItemSchema>;
+
+// export type TestUser = {
+//   id: string;
+//   email: string;
+//   password: string;
+// };
+
+// export const testUser: TestUser = {
+//   id: "1",
+//   email: "contact@cosdensolutions.io",
+//   password: "12345678",
+// };
+
+// export const formSchema = z.object({
+//   email: z.string().email({ message: "Invalid email address" }).trim(),
+//   password: z
+//     .string()
+//     .min(8, { message: "Password must be at least 8 characters" })
+//     .trim(),
+// });
+
+// export type CreateFormType = z.infer<typeof formSchema>;
